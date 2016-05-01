@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/newworld-lab/bbs/issues"
   },
-  "homepage": "https://github.com/newworld-lab/bbs#readme"
+  "homepage": "https://github.com/newworld-lab/bbs#readme",
+  "dependencies": {
+    "co": "^4.6.0"
+  }
 }
