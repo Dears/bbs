@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/newworld-lab/bbs#readme",
   "dependencies": {
-    "co": "^4.6.0"
+    "co": "^4.6.0",
+    "express": "^4.13.4"
   }
 }
