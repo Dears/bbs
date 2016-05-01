@@ -6,4 +6,4 @@ var server = http.createServer(function(req, res){
 });
 
 server.listen(3000);
-console.log('server listening...');
+console.log('server listening');
