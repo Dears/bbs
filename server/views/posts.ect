@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Posts</title>
+  <style>
+    p {
+      line-height: 22px;
+      font-size: 16px;
+      margin: 0;
+      padding: 0;
+    }
+    .post {
+      margin: 5px 0px;
+    }
+    .comment {
+      padding-left: 30px;
+    }
+  </style>
+</head>
+<body>
+<session id="toolbar">
+  <form method="post" action="/logout" >
+    <input type="submit" value="logout" />
+  </form>
+</session>
+<session id="input">
+  <form method="post" action="/bbs/post" >
+    <fieldset>
+      <textarea name="body" rows="5" cols="20" required></textarea>
+      <input type="submit" value="submit" />
+    </fieldset>
+  </form>
+</session>
+<section id="posts">
+  <% for post in @posts : %>
+    <div class="post">
+      <p class="name"><%= post.id %>：<%= post.username %>：<%= post.time %></p>
+      <p class="comment"><%- post.text %></p>
+    </div>
+  <% end %>
+</section>
+</body>
+</html>
