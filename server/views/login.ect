@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+</head>
+<body>
+  <h1>ログイン</h1>
+  <form action="/login" method="POST">
+    <p style="color: red"><%= @message %></p>
+    <p>メールアドレス:<input type="email" name="email" value="<%= @email %>" required></p>
+    <p>パスワード:<input type="password" name="password" required></p>
+    <input type="submit" val="ログイン"> <a href="/signup">ユーザ登録</a>
+  </form>
+</body>
+</html>
