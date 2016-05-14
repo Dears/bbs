@@ -1,1 +1,0 @@
-{"virtualbox":{"/var/www/server":{"guestpath":"/var/www/server","hostpath":"D:/Users/dears/Documents/workspace/newworld-lab/bbs/server","disabled":false},"/vagrant":{"guestpath":"/vagrant","hostpath":"D:/Users/dears/Documents/workspace/newworld-lab/bbs/vagrant","disabled":false}}}
