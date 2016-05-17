@@ -16,11 +16,16 @@
 ### vagrantおまけ　参考文献
 * 「Vagrantって流行ってるらしいけど何が便利なの？」　http://dev.classmethod.jp/server-side/virtual-box-vagrant/
 * 「開発環境の構築・共有を簡単にするVagrant入門」　https://thinkit.co.jp/story/2015/03/19/5740
-* 「Windows上でVirtualBox+Vagrant+CentOSによる仮想環境構築」　http://qiita.com/hiroyasu55/items/11a4c996b0c62450940f
+* 「Windows上でVirtualBox+Vagrant+CentOSによる仮想環境構築」 http://qiita.com/hiroyasu55/items/11a4c996b0c62450940f
 
-### gitの設定
-* https://opcdiary.net/?page_id=27065　参照
+### git / GitHubの設定
+* 「Git For Windowsのインストール手順」　https://opcdiary.net/?page_id=27065
+* 「GitHubの初期設定」　http://qiita.com/drapon/items/441e18452b25060d61f1
+* gitパス通ってなかったらコマンド再起動
 * 公開鍵の設定はPC毎にすること
+* git clone [newworld-labのurl]  -- cloneでレポジトリを落としてくる
+* git remote rename origin upstream   -- 使いやすいようにリネーム（備忘）
+* git remote add origin [自分のoriginのurl]  -- originを追加
 
 ### アクセスについて
 * vagrantのIPアドレス： 192.168.33.10 (Vagrantfile)
