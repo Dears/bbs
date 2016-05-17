@@ -4,6 +4,7 @@
 * Virtual Box
 * vagrant 1.7.4
   * centos7(https://github.com/holms/vagrant-centos7-box/releases/download/7.1.1503.001/CentOS-7.1.1503-x86_64-netboot.box)
+* git
 * node v4.4.3
 * mongoDB v3.2.6
 
@@ -15,6 +16,11 @@
 ### vagrantおまけ　参考文献
 * 「Vagrantって流行ってるらしいけど何が便利なの？」　http://dev.classmethod.jp/server-side/virtual-box-vagrant/
 * 「開発環境の構築・共有を簡単にするVagrant入門」　https://thinkit.co.jp/story/2015/03/19/5740
+* 「Windows上でVirtualBox+Vagrant+CentOSによる仮想環境構築」　http://qiita.com/hiroyasu55/items/11a4c996b0c62450940f
+
+### gitの設定
+* https://opcdiary.net/?page_id=27065　参照
+* 公開鍵の設定はPC毎にすること
 
 ### アクセスについて
 * vagrantのIPアドレス： 192.168.33.10 (Vagrantfile)
