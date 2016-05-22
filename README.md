@@ -32,6 +32,12 @@
 * ポート：　3000 (index.js)
 * Vagrantfile内でprivate_networkにされてるので外部からのアクセス想定はなし
 
+### vagrant sshで入ったら初回にやること
+* nvmをinstall 「開発環境の構築・共有を簡単にするVagrant入門」参照
+* nodeをnvmからinstall versionは前述の通り
+* 作業フォルダ(server)配下で npm install してpackage.jonに記述あるものを一括インストール
+* nodemon等は別途インストール(コマンドには-gを忘れずに)
+
 ### MongoDB
 * インストール　https://docs.mongodb.org/manual/tutorial/install-mongodb-on-red-hat/
 * mongoDBの起動　sudo service mongod start
@@ -61,3 +67,5 @@
 　コマンド：vagrant plugin install vagrant-vbguest
 * vagrant上でnpm installが出来ない　⇒　--no-bin-links　つける
 http://eiua-memo.tumblr.com/post/117361529158/npmvagrantvagrant%E3%81%AE%E5%85%B1%E6%9C%89%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E4%B8%8A%E3%81%A7npm
+* nvm初期設定 || vagrant立ち上げても入ってるはずのnvmが使えない
+http://qiita.com/akippiko/items/3708016fc43da088021c
