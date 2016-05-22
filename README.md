@@ -56,5 +56,8 @@
 * 正規表現、{$gte gt lte lt eq ne}, distinct等使える
 
 ### エラー対処
+* vagrant upしようとしてタイムアウトで繋がらない
+　→　boxファイル(centOS7)内部とのvagrantのバージョンが一致してない可能性。合わせることで対応
+　コマンド：vagrant plugin install vagrant-vbguest
 * vagrant上でnpm installが出来ない　⇒　--no-bin-links　つける
 http://eiua-memo.tumblr.com/post/117361529158/npmvagrantvagrant%E3%81%AE%E5%85%B1%E6%9C%89%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E4%B8%8A%E3%81%A7npm
