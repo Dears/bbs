@@ -1,5 +1,7 @@
 'use strict'
 
+const postAdapter = require('../service/adapter/post');
+
 //仮に表示するデータを配列で
 const posts = [
   {id: '0', username:'ogawa', time:'ddd', text:'body0', },
@@ -14,11 +16,16 @@ exports.get = function(req, res) {
 
 exports.post = function(req, res) {
   let text = req.body.text;
+
   posts.push({
     id: posts.length,
     username: 'ogawa' + posts.length,
     time: 'ssss',
     text: text
   });
+
+// お試しでmongoにも入れてみる
+  postAdapter.insert('ogawa', text);
+
   res.redirect('/posts');
 }
