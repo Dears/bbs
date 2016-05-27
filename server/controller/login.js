@@ -15,6 +15,7 @@ exports.post = function(req, res) {
   account.login(email, password);
 
   // session を作る
+  account.sessionGenerate(res, email, password);
 
   // ログイン成功
   res.redirect('/posts');
