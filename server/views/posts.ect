@@ -33,9 +33,9 @@
   </form>
 </session>
 <section id="posts">
-  <% for post in @posts : %>
+  <% for i,post of @posts : %>
     <div class="post">
-      <p class="name"><%= post.id %>：<%= post.username %>：<%= post.time %></p>
+      <p class="name"><%= 1 + parseInt(i) %>：<%= post.username %>：<%= post.time %></p>
       <p class="comment"><%- post.text %></p>
     </div>
   <% end %>
