@@ -1,6 +1,7 @@
 'use strict'
 
 const postAdapter = require('../service/adapter/post');
+const userAdapter = require('../service/adapter/user');
 
 exports.get = function(req, res, next) {
   // mongoDBからデータを渡す
@@ -13,11 +14,16 @@ exports.get = function(req, res, next) {
 
 exports.post = function(req, res, next) {
   let text = req.body.text;
-
-// お試しでmongoにも入れてみる
-  postAdapter.insert('ogawa', text, function(err) {
+  let email = req.cookies.email;
+  userAdapter.getUserByEmail(email, function(err, user){
     if(err)
       return next(err);
-    res.redirect('/posts');
+
+    // お試しでmongoにも入れてみる
+    postAdapter.insert(user.username, text, function(err) {
+      if(err)
+        return next(err);
+      res.redirect('/posts');
+    });
   });
 }
