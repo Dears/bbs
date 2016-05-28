@@ -41,7 +41,7 @@ app.post('/signup', account.sessionCheck,signup.post);
 
 // エラー処理
 app.use(function(err, req, res, next){
-  res.send(err.message);
+  res.send(err.stack);
 });
 
 app.listen(3000);

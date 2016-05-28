@@ -2,7 +2,6 @@
 
 // mongoDBに接続
 const mongoose = require('mongoose');
-const autoIncrement = require("mongoose-auto-increment");
 
 const connection = mongoose.connect('mongodb://localhost/bbs');
 
