@@ -1,15 +1,30 @@
 'use strict'
 
 const util = require('./util');
+const userAdapter = require('./adapter/user');
 
 const tokenMap = {};
 
 const tokenLength = 20;
 const tokenExpireTime = 30*60*1000; // 30m
 
-// ログイン認証処理
-exports.login = function(email, password){};
+// ユーザ登録する
+exports.regist = function(username, email, password, callback){
+  userAdapter.insert(username, password, email, callback);
+};
 
+// ログイン認証処理
+exports.login = function(email, password, callback){
+  userAdapter.getUserByEmail(email, function(err, user){
+    console.log(user);
+    if(err)
+      return callback(err);
+    if(user == null || user.password != password)
+      return callback(new Error('未登録のユーザーです'));
+    // ユーザ認証に成功
+    callback(null, user);
+  });
+};
 
 // セッション作る
 exports.sessionGenerate = function(res, email, password){

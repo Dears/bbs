@@ -31,13 +31,13 @@ const logout = require('./controller/logout');
 const signup = require('./controller/signup');
 const account = require('./service/account'); // ログイン後のページではセッションチェックを走らせる
 app.get('/', index.get);
+app.get('/signup', signup.get);
+app.post('/signup', signup.post);
 app.get('/login', login.get);
 app.post('/login', login.post);
 app.get('/posts', account.sessionCheck, posts.get);
 app.post('/posts', account.sessionCheck,posts.post);
 app.post('/logout', account.sessionCheck,logout.post);
-app.get('/signup', account.sessionCheck,signup.get);
-app.post('/signup', account.sessionCheck,signup.post);
 
 // エラー処理
 app.use(function(err, req, res, next){

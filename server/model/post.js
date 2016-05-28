@@ -2,8 +2,7 @@
 
 // mongoDBに接続
 const mongoose = require('mongoose');
-
-const connection = mongoose.connect('mongodb://localhost/bbs');
+const connection = require('../context').connection;
 
 const Schema = mongoose.Schema;
 const postSchema = new Schema({
