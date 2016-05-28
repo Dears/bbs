@@ -1,6 +1,10 @@
 'use strict'
 
+const jsonschema = require('jsonschema').Validator;
+const validator = new jsonschema();
+
 const account = require('../service/account');
+const registSchema = require('../schema').registSchema;
 
 exports.get = function(req, res) {
   res.render('signup');
@@ -8,6 +12,10 @@ exports.get = function(req, res) {
 
 // ユーザ情報登録
 exports.post = function(req, res, next) {
+  //Validation　Check
+  if(!validator.validate(req.body, registSchema).valid)
+    return next(new Error("不正な入力です"));
+
   //　情報受け取る
   let username = req.body.username;
   let email = req.body.email;
