@@ -8,6 +8,13 @@
 * node v4.4.3
 * mongoDB v3.2.6
 
+### 色々実用性と拡張を想定してやってみた
+* githubによる管理
+* MongoDBを使ったデータ保持
+* クッキーセッションでのログイン
+* パスワードへのセキュリティ強化(salt付加からの暗号化) http://qiita.com/_daisuke/items/990513e89ca169e9c4ad
+* 今後の諸々自動化等も考慮してのJSONスキーマ実装(現状バリデーションチェックに利用) https://www.npmjs.com/package/jsonschema
+
 ### vagrant使い方
 * vagrant up ... vagrant環境起動
 * vagrant ssh ... vagrantの仮想OSにログイン
