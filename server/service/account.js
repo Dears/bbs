@@ -45,7 +45,7 @@ exports.login = function(email, password, callback){
 // セッション作る
 exports.sessionGenerate = function(res, email, password){
   // データを照合してログイン
-  let token = util.getRamdomStr(tokenLength);
+  let token = util.getRandomStr(tokenLength);
   tokenMap[token] = email;
   res.cookie('token', token, {maxAge: tokenExpireTime});
   res.cookie('email', email, {maxAge: tokenExpireTime});

@@ -14,6 +14,10 @@ const password = {
   "minLength": 4,
   "maxLength": 8
 };
+const naturalNumber = {
+  "type" : "integer",
+  "minimum": 1,
+}
 
 exports.registSchema = {
   "id": "/Regist",
@@ -48,3 +52,5 @@ exports.postSchema = {
   },
   "required": ["text"]
 };
+
+exports.naturalNumberSchema = naturalNumber;
