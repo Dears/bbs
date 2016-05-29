@@ -13,8 +13,10 @@ exports.get = function(req, res) {
 // ユーザ情報登録
 exports.post = function(req, res, next) {
   //Validation　Check
-  if(!validator.validate(req.body, registSchema).valid)
+  if(!validator.validate(req.body, registSchema).valid){
+    console.log(validator.validate(req.body, registSchema));
     return next(new Error("不正な入力です"));
+  };
 
   //　情報受け取る
   let username = req.body.username;

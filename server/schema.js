@@ -12,7 +12,7 @@ const email = {
 const password = {
   "type": "string",
   "minLength": 4,
-  "maxLength": 8
+  "maxLength": 16
 };
 const naturalNumber = {
   "type" : "integer",

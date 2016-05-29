@@ -3,6 +3,10 @@
 const util = require('./util');
 const userAdapter = require('./adapter/user');
 
+const jsonschema = require('jsonschema').Validator;
+const validator = new jsonschema();
+const registSchema = require('../schema').registSchema;
+
 const crypto = require('crypto');
 const cryptoPassword = 'passw0rd';
 const salt = 'asdf';
@@ -14,6 +18,11 @@ const tokenExpireTime = 30*60*1000; // 30m
 
 // ユーザ登録する
 exports.regist = function(username, email, password, callback){
+  //Validation　Check
+  let registData = {username : username, email: email, password :password};
+  if(!validator.validate(registData, registSchema).valid)
+    return callback(new Error("Type of numeric is expected."));
+
   // 暗号化して登録
   let cipher = crypto.createCipher('aes192', cryptoPassword);
   cipher.update(salt + password, 'utf8', 'hex');

@@ -6,6 +6,7 @@ const assert = require('chai').assert;
 
 // テスト対象
 const util = require('../service/util');
+
 describe('util', function() {
   describe('getRamdomStr', function() {
     it('should return currect length (=arg)', function() {
