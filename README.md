@@ -7,13 +7,16 @@
 * git
 * node v4.4.3
 * mongoDB v3.2.6
+* mocha //テスト用モジュール
+* その他多数のmiddleware (package.jsonからinstall可能 ： npm install)
 
 ### 色々実用性と拡張を想定してやってみた
 * githubによる管理
 * MongoDBを使ったデータ保持
 * クッキーセッションでのログイン
-* パスワードへのセキュリティ強化(salt付加からの暗号化) http://qiita.com/_daisuke/items/990513e89ca169e9c4ad
+* パスワードへのセキュリティ強化(salt付加と暗号化) http://qiita.com/_daisuke/items/990513e89ca169e9c4ad
 * 今後の諸々自動化等も考慮してのJSONスキーマ実装(現状バリデーションチェックに利用) https://www.npmjs.com/package/jsonschema
+* testフォルダ配下にテストコードを追加(mochaについては後述)
 
 ### vagrant使い方
 * vagrant up ... vagrant環境起動
@@ -67,6 +70,17 @@
 * データ確認　db.[collection名].find()
 * データ件数確認　db.[collection名].count()
 * 正規表現、{$gte gt lte lt eq ne}, distinct等使える
+
+### テストコードを使う
+* serviceで使われる機能に対して単体テスト用のコードを作成
+* テストはmochaを利用(AssertとしてはTDD/BDD両方に利用できるchaiを使った)
+* コマンド： mocha --reporter spec [テストコードの存在するファイル]
+
+### node.jsでのテストについて 参考文献
+* 「node.jsのいろいろなモジュール22 – mochaでテストを書こう」　http://dev.classmethod.jp/server-side/node-mocha/
+* 「node.js単体テスト入門」 http://qiita.com/oret/items/8c9a216865b088c15d68
+* 「JavaScript テストフレームワーク『Mocha』の使い方メモ」　http://phiary.me/javascript-test-framework-mocha-usage/
+* 「Mocha, Chai, Sinon を使ったNode.js のテスト自動化　実践編」　 http://qiita.com/TsutomuNakamura/items/0eb50bf7622a3906e101
 
 ### エラー対処
 * vagrant upしようとしてタイムアウトで繋がらない

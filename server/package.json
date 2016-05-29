@@ -18,6 +18,7 @@
   "homepage": "https://github.com/newworld-lab/bbs#readme",
   "dependencies": {
     "body-parser": "^1.15.1",
+    "chai": "^3.5.0",
     "cookie-parser": "^1.4.3",
     "ect": "^0.5.9",
     "express": "^4.13.4",
