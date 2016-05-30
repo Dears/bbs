@@ -17,6 +17,7 @@
 * パスワードへのセキュリティ強化(salt付加と暗号化) http://qiita.com/_daisuke/items/990513e89ca169e9c4ad
 * 今後の諸々自動化等も考慮してのJSONスキーマ実装(現状バリデーションチェックに利用) https://www.npmjs.com/package/jsonschema
 * testフォルダ配下にテストコードを追加(mochaについては後述)
+* テストコードを元に、カバレッジを算出
 
 ### vagrant使い方
 * vagrant up ... vagrant環境起動
@@ -75,6 +76,15 @@
 * serviceで使われる機能に対して単体テスト用のコードを作成
 * テストはmochaを利用(AssertとしてはTDD/BDD両方に利用できるchaiを使った)
 * コマンド： mocha --reporter spec [テストコードの存在するファイル]
+
+### カバレッジを算出する
+* カバレッジを取ることで、全体の品質を検証する
+* 脆弱性が見つかれば、コードの見直しやテストの補足が出来る
+* 必要なのはgulpfile.js　コマンド：gulp [検証するglupfile内のタスク名]
+* coverageフォルダが生成され、lcov-report\index.htmlをブラウザで見ると脆弱性やカバレッジの低い要因が可視化される
+* 「node.jsでテストのカバレッジを取る」 http://qiita.com/iwata-n@github/items/1e8f629eb5b429a49e6d
+* 「grunt+istanbul+mochaでNode.jsのテスト＆カバレッジ計測を行う」　http://qiita.com/u-minor/items/35889e80fb5075d56903
+* 「Gulp導入手順」　http://qiita.com/lab3-34/items/21fcdc95e29802382fda
 
 ### node.jsでのテストについて 参考文献
 * 「node.jsのいろいろなモジュール22 – mochaでテストを書こう」　http://dev.classmethod.jp/server-side/node-mocha/
